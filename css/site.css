@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Iosevka Aile Web';
+    src: url(./fonts/Iosevka-Regular.ttf), format('ttf');
+}
+
 body {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+    font-family: 'Iosevka Aile Web', 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
   max-width: 600px;
   margin: 0 auto;
   padding-top: 72px;
