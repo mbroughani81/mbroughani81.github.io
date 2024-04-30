@@ -11,7 +11,7 @@
 (defn flow []
   (let [drops      (<-drops)
         drops-comp (mapv #(-> [:p (:body %)]) drops)
-        _          (println "GOOs" drops-comp)]
+        _          (println "GOOsss" drops-comp)]
     (into [] (concat [:div] drops-comp))))
 
 
