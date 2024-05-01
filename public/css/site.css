@@ -5,9 +5,9 @@
 
 body {
     font-family: 'Iosevka Aile Web', 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
+  max-width: 0.9;
   margin: 0 auto;
-  padding-top: 72px;
+  padding-top: 30px;
   -webkit-font-smoothing: antialiased;
   font-size: 1.125em;
   color: #333;
@@ -36,4 +36,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.header-item {
+    display: inline;
+    padding: 10px;
+}
+
+.drops-container {
+    margin: 100px;
 }

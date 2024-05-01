@@ -9,16 +9,30 @@
 ;; -------------------------------------------------- ;;
 
 (defn flow []
-  (let [drops      (<-drops)
-        drops-comp (mapv #(-> [:p (:body %)]) drops)
-        _          (println "GOOsss" drops-comp)]
-    (into [] (concat [:div] drops-comp))))
+  (let [drops (<-drops)
+        drops (mapv #(-> [:p (:body %)]) drops)
+        _     (println "GOOsss" drops)]
+    (into [] (concat [:div {:class "drops-container"}] drops))))
 
+(defn header []
+  [:header
+   [:ul
+    [:li {:class "header-item"} "Flow"]
+    [:li {:class "header-item"} "Menu"]
+    [:li {:class "header-item"} "Menu"]
+    [:li {:class "header-item"} "Menu"]
+    [:li {:class "header-item"} "Menu"]
+    ]])
+
+(defn page []
+  [:div
+   [header]
+   [flow]])
 
 ;; -------------------------------------------------- ;;
 
 (defn mount-root []
-  (d/render [flow] (.getElementById js/document "app")))
+  (d/render [page] (.getElementById js/document "app")))
 
 (defn ^:export init! []
   (mount-root ))
