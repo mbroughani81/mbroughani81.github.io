@@ -1,10 +1,17 @@
+/* @font-face { */
+/*     font-family: 'Iosevka Aile Web'; */
+/*     src: url(./fonts/Iosevka-Regular.ttf), format('ttf'); */
+/* } */
 @font-face {
-    font-family: 'Iosevka Aile Web';
-    src: url(./fonts/Iosevka-Regular.ttf), format('ttf');
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/notosans/v27/o-0IIpQlx3QUlC5A4PNr5TRA.woff2') format('woff2');
+    font-display: swap;
 }
 
 body {
-    font-family: 'Iosevka Aile Web', 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
   max-width: 0.9;
   margin: 0 auto;
   padding-top: 30px;
