@@ -2,7 +2,11 @@
   (:require
    [reagent.core :as r]
    [reagent.dom :as d]
-   [clojure.string :as str])
+   [clojure.string :as str]
+   [re-frame.core :as rf]
+
+   [flow.events :as events]
+   [flow.subs :as subs])
   (:require-macros [flow.get-drops :refer [<-drops]]))
 
 ;; -------------------------------------------------- ;;
@@ -11,7 +15,8 @@
 (defn flow []
   (let [drops (<-drops)
         drops (mapv #(-> [:p (:body %)]) drops)
-        _     (println "GOOsss" drops)]
+        _     (println "Here is the " @(rf/subscribe [::subs/page-body]))
+        ]
     (into [] (concat [:div {:class "drops-container"}] drops))))
 
 (defn header []
@@ -35,12 +40,14 @@
   (d/render [page] (.getElementById js/document "app")))
 
 (defn ^:export init! []
-  (mount-root ))
+  (rf/dispatch-sync [::events/initialize])
+  (mount-root))
 
 ;; -------------------------------------------------- ;;
 
 (comment
   (flow)
+  (println "GGG")
   (simple-example)
 
   (<-drops)

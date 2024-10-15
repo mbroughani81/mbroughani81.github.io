@@ -1,11 +1,13 @@
 {:source-paths ["src"]
  :dependencies [[binaryage/devtools "1.0.6"]
                 [nrepl "1.0.0"]
-                [reagent "1.1.1"]]
+                [reagent "1.1.1"]
+                [re-frame "1.4.3"]
+                ]
  :builds       {:app {:target     :browser
                       :output-dir "public/js"
                       :asset-path "/js"
                       :modules    {:app {:entries [flow.core]}}
                       :devtools   {:after-load flow.core/mount-root}}}
 
- :dev-http     {3000 {:root "public"}}}
+ :dev-http {3000 {:root "public"}}}

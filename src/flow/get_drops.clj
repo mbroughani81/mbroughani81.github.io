@@ -12,6 +12,23 @@
 
 (defmacro <-drops [] (gen-drops))
 
+(def pages-dir "public/pages")
+
+(defn gen-pages []
+  (reduce
+    (fn [acc f]
+      (let [filename (keyword (.getName f))]
+        (assoc acc filename (slurp f)))
+      ;; (conj acc (slurp f))
+      ;; (println "FFFF => " f (keyword (.getName f)))
+
+      ;; (conj acc (read-string (slurp f)))
+      )
+    {}
+    (.listFiles (java.io.File. pages-dir))))
+
+(defmacro <-pages [] (gen-pages))
+
 (comment
   (<-drops)
 
