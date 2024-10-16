@@ -6,3 +6,9 @@
 
 (defn about-page [content]
   [:p content])
+
+(defn cv-page [content]
+  [:p content])
+
+(defn repos-page [content]
+  [:p content])

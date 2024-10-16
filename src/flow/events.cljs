@@ -22,6 +22,7 @@
 
   (def zz :flow.routes/about)
 
+  (<-pages)
 
   (println ::rf/gooz)
 

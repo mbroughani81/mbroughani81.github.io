@@ -19,8 +19,8 @@
         page-body @(rf/subscribe [::subs/page-body])
         _         (println "db => " @(rf/subscribe [::subs/db]))
         view      @(rf/subscribe [::subs/page-view])
+        _         (println "page-body view" page-body view)
         ;; Why view can be nil?
-        _         (println "VV => " (type view) page-body)
         page      (when view
                     (view page-body))
         _         (when page
@@ -37,8 +37,7 @@
    [:ul
     [:li {:class "header-item"} [:a {:href "/about"} "about"]]
     [:li {:class "header-item"} [:a {:href "/cv"} "cv"]]
-    [:li {:class "header-item"} [:a {:href "/cy"} "cy"]]
-    [:li {:class "header-item"} [:a {:href "/cz"} "cz"]]
+    [:li {:class "header-item"} [:a {:href "/repos"} "repos"]]
     ]])
 
 (defn page []

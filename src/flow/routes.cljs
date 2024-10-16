@@ -14,7 +14,16 @@
    ["about"
     {:name      ::about
      :view      pages/about-page
-     :body-file "about.md"}]])
+     :body-file "about.md"}]
+   ["cv"
+    {:name      ::cv
+     :view      pages/cv-page
+     :body-file "cv.md"}]
+   ["repos"
+    {:name      ::repos
+     :view      pages/repos-page
+     :body-file "repos.md"}]
+   ])
 
 (defn on-navigate [new-match]
   (when new-match
