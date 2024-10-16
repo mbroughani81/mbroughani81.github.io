@@ -6,27 +6,39 @@
    [re-frame.core :as rf]
 
    [flow.events :as events]
-   [flow.subs :as subs])
+   [flow.subs :as subs]
+   [flow.routes :as routes])
   (:require-macros [flow.get-drops :refer [<-drops]]))
 
 ;; -------------------------------------------------- ;;
 ;; -------------------------------------------------- ;;
 
 (defn flow []
-  (let [drops (<-drops)
-        drops (mapv #(-> [:p (:body %)]) drops)
-        _     (println "Here is the " @(rf/subscribe [::subs/page-body]))
+  (let [drops     (<-drops)
+        drops     (mapv #(-> [:p (:body %)]) drops)
+        page-body @(rf/subscribe [::subs/page-body])
+        _         (println "db => " @(rf/subscribe [::subs/db]))
+        view      @(rf/subscribe [::subs/page-view])
+        ;; Why view can be nil?
+        _         (println "VV => " (type view) page-body)
+        page      (when view
+                    (view page-body))
+        _         (when page
+                    (println "PPPP => " page))
         ]
-    (into [] (concat [:div {:class "drops-container"}] drops))))
+    ;; (into [] (concat [:div {:class "drops-container"}] drops))
+    (if (nil? page)
+      (into [] (concat [:div {:class "drops-container"}] drops))
+      [:div {:class "drops-container"} page]
+      )))
 
 (defn header []
   [:header
    [:ul
-    [:li {:class "header-item"} "Flow"]
-    [:li {:class "header-item"} "Menu"]
-    [:li {:class "header-item"} "Menu"]
-    [:li {:class "header-item"} "Menu"]
-    [:li {:class "header-item"} "Menu"]
+    [:li {:class "header-item"} [:a {:href "/about"} "about"]]
+    [:li {:class "header-item"} [:a {:href "/cv"} "cv"]]
+    [:li {:class "header-item"} [:a {:href "/cy"} "cy"]]
+    [:li {:class "header-item"} [:a {:href "/cz"} "cz"]]
     ]])
 
 (defn page []
@@ -40,7 +52,9 @@
   (d/render [page] (.getElementById js/document "app")))
 
 (defn ^:export init! []
+  (rf/clear-subscription-cache!)
   (rf/dispatch-sync [::events/initialize])
+  (routes/init-routes!)
   (mount-root))
 
 ;; -------------------------------------------------- ;;
@@ -50,7 +64,6 @@
   (println "GGG")
   (simple-example)
 
-  (<-drops)
 
   )
 

@@ -18,12 +18,7 @@
   (reduce
     (fn [acc f]
       (let [filename (keyword (.getName f))]
-        (assoc acc filename (slurp f)))
-      ;; (conj acc (slurp f))
-      ;; (println "FFFF => " f (keyword (.getName f)))
-
-      ;; (conj acc (read-string (slurp f)))
-      )
+        (assoc acc filename (slurp f))))
     {}
     (.listFiles (java.io.File. pages-dir))))
 

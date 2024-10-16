@@ -3,6 +3,7 @@
                 [nrepl "1.0.0"]
                 [reagent "1.1.1"]
                 [re-frame "1.4.3"]
+                [metosin/reitit "0.7.2"]
                 ]
  :builds       {:app {:target     :browser
                       :output-dir "public/js"

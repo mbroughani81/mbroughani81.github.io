@@ -1,13 +1,24 @@
 (ns flow.subs
   (:require
-   [re-frame.core :as rf])
-  (:require-macros [flow.get-drops :refer [<-pages]]))
+   [re-frame.core :as rf]))
 
 (rf/reg-sub
   ::page-body
-  (fn [db [_] page]
-    ;; (get-in db [:page-body page])
-    ;; (-> "THIS IS PAGE BODY")
-    (-> (<-pages))
-    ;; This should read the "page" from resources
-    ))
+  (fn [db]
+    (let [body-file (-> db :current-match :body-file)
+          result    (-> db
+                        :pages
+                        (get (keyword body-file)))
+          _         (println "page-body " result)]
+      (-> result))))
+
+(rf/reg-sub
+  ::page-view
+  (fn [db]
+    (let [page-view (-> db :current-match :view)]
+      (-> page-view))))
+
+(rf/reg-sub
+  ::db
+  (fn [db _]
+    db))
