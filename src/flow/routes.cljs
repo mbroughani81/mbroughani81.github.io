@@ -11,6 +11,10 @@
 
 (def routes
   ["/"
+   [""
+    {:name      ::root
+     :view      pages/about-page
+     :body-file "about.md"}]
    ["about"
     {:name      ::about
      :view      pages/about-page
