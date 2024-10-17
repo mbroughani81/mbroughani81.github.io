@@ -34,11 +34,14 @@
 
 (defn header []
   [:header
-   [:ul
-    [:li {:class "header-item"} [:a {:href "/about"} "about"]]
-    [:li {:class "header-item"} [:a {:href "/cv"} "cv"]]
-    [:li {:class "header-item"} [:a {:href "/repos"} "repos"]]
-    ]])
+   [:div.header-container
+    [:div.header-left "Mohammad Broughani"]
+    [:div.header-right
+     [:ul
+      [:li {:class "header-item"} [:a {:href "/about"} "about"]]
+      [:li {:class "header-item"} [:a {:href "/cv"} "cv"]]
+      [:li {:class "header-item"} [:a {:href "/repos"} "repos"]]
+      ]]]])
 
 (defn page []
   [:div

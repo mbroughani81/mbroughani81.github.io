@@ -53,3 +53,35 @@ a:hover {
 .drops-container {
     margin: 100px;
 }
+
+.header-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Space between the name and the links */
+    align-items: center;
+}
+
+/* Style for the name on the left */
+.header-left {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Style for the links on the right */
+.header-right ul {
+    display: flex;
+    gap: 20px; /* Space between the list items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-item a {
+    text-decoration: none;
+    color: #000000; /* Customize the color as desired */
+}
+
+header {
+    padding: 20px 0;
+}

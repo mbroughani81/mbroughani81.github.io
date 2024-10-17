@@ -27,5 +27,7 @@
 (comment
   (<-drops)
 
+  (<-pages)
+
   ;;
   )
