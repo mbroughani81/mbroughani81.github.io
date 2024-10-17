@@ -13,7 +13,7 @@
 ;; -------------------------------------------------- ;;
 ;; -------------------------------------------------- ;;
 
-(defn flow []
+(defn page []
   (let [drops     (<-drops)
         drops     (mapv #(-> [:p (:body %)]) drops)
         page-body @(rf/subscribe [::subs/page-body])
@@ -24,12 +24,10 @@
         page      (when view
                     (view page-body))
         _         (when page
-                    (println "PPPP => " page))
-        ]
-    ;; (into [] (concat [:div {:class "drops-container"}] drops))
+                    (println "PPPP => " page))]
     (if (nil? page)
-      (into [] (concat [:div {:class "drops-container"}] drops))
-      [:div {:class "drops-container"} page]
+      [:div {:class "drops-container"} [:h1 ""]]
+      [:div {:class "page-container"} page]
       )))
 
 (defn header []
@@ -43,15 +41,15 @@
       [:li {:class "header-item"} [:a {:href "/repos"} "repos"]]
       ]]]])
 
-(defn page []
+(defn app []
   [:div
    [header]
-   [flow]])
+   [page]])
 
 ;; -------------------------------------------------- ;;
 
 (defn mount-root []
-  (d/render [page] (.getElementById js/document "app")))
+  (d/render [app] (.getElementById js/document "app")))
 
 (defn ^:export init! []
   (rf/clear-subscription-cache!)

@@ -27,7 +27,11 @@
 (comment
   (<-drops)
 
-  (<-pages)
+  (def x (<-pages))
+
+
+  (-> x
+      :about.md)
 
   ;;
   )
