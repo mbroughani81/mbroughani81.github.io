@@ -33,7 +33,6 @@
   (rfr/router
     routes
     {:data {:coercion rss/coercion}}))
-
 (defn init-routes! []
   (rfe/start!
     router
