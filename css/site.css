@@ -45,14 +45,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.header-item {
-    display: inline;
-    padding: 10px;
-}
-
-.drops-container {
-    margin: 100px;
-}
+/* HEADER */
 
 .header-container {
     width: 50%;
@@ -84,4 +77,11 @@ a:hover {
 
 header {
     padding: 20px 0;
+}
+
+/* PAGE */
+
+.page-container {
+    width: 50%;
+    margin: 0 auto;
 }
