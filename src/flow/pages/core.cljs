@@ -15,10 +15,19 @@
   [:div {:style {:display "flex" :justify-content "space-between" :align-items "flex-start"}}
    [:div ;; Content on the left
     [render-markdown content]]
-   [:img {:src   "images/profile.jpg"
-          :alt   "Description of the image"
-          :style {:max-width   "200px"  ;; Adjust the size as needed
-                  :margin-left "20px"}}]])
+   [:div {:style {:display "flex" :flex-direction "column" :align-items "center" :margin-left "50px"}}
+    [:img {:src   "images/profile.jpg"
+           :alt   "Description of the image"
+           :style {:max-width "200px" ;; Adjust the size as needed
+                   }}]
+    [:div {:style {:margin-top "10px"}}
+     [:a {:href "mailto:mbroughani81@gmail.com" :style {:margin "0 10px"}}
+      [:i {:class "fas fa-envelope" :style {:font-size "24px" :color "black"}}]]
+     [:a {:href "https://github.com/mbroughani81" :target "_blank" :style {:margin "0 10px"}}
+      [:i {:class "fab fa-github" :style {:font-size "24px" :color "black"}}]]
+     [:a {:href "https://www.linkedin.com/in/mohammad-broughani-472837214" :target "_blank" :style {:margin "0 10px"}}
+      [:i {:class "fab fa-linkedin" :style {:font-size "24px" :color "black"}}]]
+     ]]])
 
 (defn cv-page [content]
   [:p content])
