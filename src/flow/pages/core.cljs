@@ -28,8 +28,7 @@
      [:a {:href "https://github.com/mbroughani81" :target "_blank" :style {:margin "0 10px"}}
       [:i {:class "fab fa-github" :style {:font-size "24px" :color "black"}}]]
      [:a {:href "https://www.linkedin.com/in/mohammad-broughani-472837214" :target "_blank" :style {:margin "0 10px"}}
-      [:i {:class "fab fa-linkedin" :style {:font-size "24px" :color "black"}}]]
-     ]]])
+      [:i {:class "fab fa-linkedin" :style {:font-size "24px" :color "black"}}]]]]])
 
 (defn cv-page [content]
   [:p content])
