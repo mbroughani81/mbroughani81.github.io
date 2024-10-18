@@ -57,7 +57,7 @@ a:hover {
 
 /* Style for the name on the left */
 .header-left {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -84,4 +84,7 @@ header {
 .page-container {
     width: 50%;
     margin: 0 auto;
+}
+.content-holder p:first-child {
+    margin: 0px;
 }

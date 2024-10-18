@@ -7,7 +7,7 @@
 
 (defn render-markdown [markdown-content]
   (let [html-content (md/md-to-html-string markdown-content)]
-    [:div {:dangerouslySetInnerHTML {:__html html-content}}]))
+    [:div.content-holder {:dangerouslySetInnerHTML {:__html html-content}}]))
 
 (defn about-page [content]
   ;; [:p content]
@@ -18,8 +18,8 @@
    [:div {:style {:display "flex" :flex-direction "column" :align-items "center" :margin-left "50px"}}
     [:img {:src   "images/profile.jpg"
            :alt   "Description of the image"
-           :style {:max-width "200px" ;; Adjust the size as needed
-                   :box-shadow   "0 4px 8px rgba(0, 0, 0, 0.5)" ;; Horizontal offset, vertical offset, blur radius, color
+           :style {:max-width     "200px" ;; Adjust the size as needed
+                   :box-shadow    "0 4px 8px rgba(0, 0, 0, 0.5)" ;; Horizontal offset, vertical offset, blur radius, color
                    :border-radius "10px"
                    }}]
     [:div {:style {:margin-top "10px"}}
