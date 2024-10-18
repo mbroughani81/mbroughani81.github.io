@@ -5,6 +5,7 @@
                 [re-frame "1.4.3"]
                 [metosin/reitit "0.7.2"]
                 [markdown-clj "1.12.1"]
+                [com.taoensso/timbre "6.6.0-RC1"]
                 ]
  :builds       {:app {:target     :browser
                       :output-dir "public/js"

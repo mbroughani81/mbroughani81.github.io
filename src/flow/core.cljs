@@ -4,6 +4,7 @@
    [reagent.dom :as d]
    [clojure.string :as str]
    [re-frame.core :as rf]
+   [taoensso.timbre :as timbre]
 
    [flow.events :as events]
    [flow.subs :as subs]
@@ -17,14 +18,14 @@
   (let [drops     (<-drops)
         drops     (mapv #(-> [:p (:body %)]) drops)
         page-body @(rf/subscribe [::subs/page-body])
-        _         (println "db => " @(rf/subscribe [::subs/db]))
+        _         (timbre/info "db => " @(rf/subscribe [::subs/db]))
         view      @(rf/subscribe [::subs/page-view])
-        _         (println "page-body view" page-body view)
+        _         (timbre/info "page-body view" page-body view)
         ;; Why view can be nil?
         page      (when view
                     (view page-body))
         _         (when page
-                    (println "PPPP => " page))]
+                    (timbre/info "page => " page))]
     (if (nil? page)
       [:div {:class "drops-container"} [:h1 ""]]
       [:div {:class "page-container"} page]
@@ -52,6 +53,7 @@
   (d/render [app] (.getElementById js/document "app")))
 
 (defn ^:export init! []
+  (timbre/set-level! :warn)
   (rf/clear-subscription-cache!)
   (rf/dispatch-sync [::events/initialize])
   (routes/init-routes!)
@@ -61,7 +63,6 @@
 
 (comment
   (flow)
-  (println "GGG")
   (simple-example)
 
 

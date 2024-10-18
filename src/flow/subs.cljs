@@ -8,8 +8,7 @@
     (let [body-file (-> db :current-match :body-file)
           result    (-> db
                         :pages
-                        (get (keyword body-file)))
-          _         (println "page-body " result)]
+                        (get (keyword body-file)))]
       (-> result))))
 
 (rf/reg-sub

@@ -14,7 +14,6 @@
   ::navigate
   (fn [db [_ new-match]]
     (let [match (-> new-match :data)]
-      (println "current-match => " match)
       (-> db
           (assoc :current-match match)))))
 
@@ -23,8 +22,6 @@
   (def zz :flow.routes/about)
 
   (<-pages)
-
-  (println ::rf/gooz)
 
 
   )
