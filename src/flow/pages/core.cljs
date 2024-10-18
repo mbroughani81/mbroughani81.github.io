@@ -19,6 +19,8 @@
     [:img {:src   "images/profile.jpg"
            :alt   "Description of the image"
            :style {:max-width "200px" ;; Adjust the size as needed
+                   :box-shadow   "0 4px 8px rgba(0, 0, 0, 0.5)" ;; Horizontal offset, vertical offset, blur radius, color
+                   :border-radius "10px"
                    }}]
     [:div {:style {:margin-top "10px"}}
      [:a {:href "mailto:mbroughani81@gmail.com" :style {:margin "0 10px"}}
