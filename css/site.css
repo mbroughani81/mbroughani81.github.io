@@ -89,3 +89,9 @@ header {
 .content-holder p:first-child {
     margin: 0px;
 }
+
+/* ABOUT PAGE */
+.about-page a {
+    text-decoration: underline;
+    color: inherit; /* Optional: Inherit the text color */
+}
