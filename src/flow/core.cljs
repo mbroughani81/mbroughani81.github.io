@@ -53,7 +53,7 @@
   (d/render [app] (.getElementById js/document "app")))
 
 (defn ^:export init! []
-  (timbre/set-level! :warn)
+  (timbre/set-min-level! :warn)
   (rf/clear-subscription-cache!)
   (rf/dispatch-sync [::events/initialize])
   (routes/init-routes!)

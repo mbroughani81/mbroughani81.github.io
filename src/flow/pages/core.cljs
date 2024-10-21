@@ -7,13 +7,13 @@
 
 (defn render-markdown [markdown-content]
   (let [html-content (md/md-to-html-string markdown-content)]
-    [:div.content-holder {:dangerouslySetInnerHTML {:__html html-content}}]))
+    [:div {:class "content-holder" :dangerouslySetInnerHTML {:__html html-content}}]))
 
 (defn about-page [content]
   ;; [:p content]
   ;; [render-markdown content]
   [:div {:style {:display "flex" :justify-content "space-between" :align-items "flex-start"}}
-   [:div ;; Content on the left
+   [:div {:class "about-page"};; Content on the left
     [render-markdown content]]
    [:div {:style {:display "flex" :flex-direction "column" :align-items "center" :margin-left "50px"}}
     [:img {:src   "images/profile.jpg"

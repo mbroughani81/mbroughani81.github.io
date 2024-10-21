@@ -9,8 +9,8 @@ During my university years, I attended a software engineering bootcamp, which sp
 <br>
 Here is a list of my previous works and experiences:
 
-- In Summer 2023, I joined Dr. Parreaux's research group at the Hong Kong University of Science and Technology (HKUST) as a research intern. During this internship, I contributed to the design and implementation of several features for the MLscript language.
-
 - I worked as a Software Engineer at Hermes Capital for one year, where I tackled a variety of software engineering challenges and gained valuable hands-on experience in the field.
 
-- In Summer 2024, I started a research project with Dr. Kallas at the University of California, Los Angeles (UCLA), focusing on finding optimization solutions for serverless computing platforms.
+- In Summer 2023, I joined [Dr. Parreaux](https://cse.hkust.edu.hk/~parreaux/)'s research group at the Hong Kong University of Science and Technology (HKUST) as a research intern. During this internship, I contributed to the design and implementation of several features for the MLscript language.
+
+- In Summer 2024, I started a research project with [Dr. Kallas](https://angelhof.github.io/programmable-software-systems-lab.html) at the University of California, Los Angeles (UCLA), focusing on finding optimization solutions for serverless computing platforms.
