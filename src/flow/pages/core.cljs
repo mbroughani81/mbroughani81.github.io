@@ -16,9 +16,9 @@
    [:div {:class "about-page"};; Content on the left
     [render-markdown content]]
    [:div {:style {:display "flex" :flex-direction "column" :align-items "center" :margin-left "50px"}}
-    [:img {:src   "images/profile.jpg"
+    [:img {:src   "images/profile2.jpg"
            :alt   "Description of the image"
-           :style {:max-width     "200px" ;; Adjust the size as needed
+           :style {:max-width     "300px" ;; Adjust the size as needed
                    :box-shadow    "0 4px 8px rgba(0, 0, 0, 0.5)" ;; Horizontal offset, vertical offset, blur radius, color
                    :border-radius "10px"
                    }}]
