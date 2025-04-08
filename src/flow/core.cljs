@@ -38,7 +38,7 @@
     [:div.header-right
      [:ul
       [:li {:class "header-item"} [:a {:href "/about"} "about"]]
-      [:li {:class "header-item"} [:a {:href "https://drive.google.com/file/d/1tjEuijHQIGnxZhwvgr4RY61Zai-8lO4o/view?usp=sharing"} "cv"]]
+      [:li {:class "header-item"} [:a {:href "https://drive.google.com/file/d/1ivFpiV837uX1g7HoKde2PPAZu-bgA6MH/view"} "cv"]]
       ;; [:li {:class "header-item"} [:a {:href "/repos"} "repos"]]
       ]]]])
 
